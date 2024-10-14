@@ -1,3 +1,8 @@
+import os
+
+dni_file = 'dni.txt'
+nombre_file = 'nombre.txt'
+apellido_file = 'apellido.txt'
 
 def login():
     counter = 0
@@ -58,11 +63,29 @@ def generar_menu(opciones, opcion_salida):
 
 
 def listar_personas():
-    pass
-
+    if os.path.exists(dni_file) and os.path.exists(nombre_file) and os.path.exists(apellido_file):
+        print("{:<15} {:<15} {:<15}".format("DNI", "Nombres", "Apellidos"))
+        print("-" * 45)
+        with open(dni_file, 'r') as dnis, open(nombre_file, 'r') as nombres, open(apellido_file, 'r') as apellidos:
+            dni_list = dnis.readlines()
+            nombre_list = nombres.readlines()
+            apellido_list = apellidos.readlines()
+            for i in range(len(dni_list)):
+                print("{:<15} {:<15} {:<15}".format(dni_list[i].strip(), nombre_list[i].strip(), apellido_list[i].strip()))
+    else:
+        print("No hay personas registradas.")    
+        
+        
 def agregar_personas():
-    pass
+    dni = input("Ingrese DNI: ").strip()
+    nombre = input("Ingrese Nombres: ").strip()
+    apellido = input("Ingrese Apellidos: ").strip()
 
+    with open(dni_file, 'at') as dnis, open(nombre_file, 'at') as nombres, open(apellido_file, 'at') as apellidos:
+        dnis.write('\n' + dni)
+        nombres.write('\n' + nombre)
+        apellidos.write('\n' + apellido)
+    print("Persona agregada exitosamente.")
 
 def exit():
     print('Saliendo')
