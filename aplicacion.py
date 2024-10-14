@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct 14  2024
+
+@author: Damiano Fernandez
+@author: Barquero Huaman
+
+"""
+
 import os
 
 dni_file = 'dni.txt'
