@@ -1,4 +1,4 @@
 Integrantes
--Barquero Huamán Valeria Elizabeth
--Damiano Fernandez Pablo Avelino
+-Barquero Huamán Valeria Elizabeth 2213010347
+-Damiano Fernandez Pablo Avelino 2213010272
 -Git Hub:https://github.com/yeacomono/parcial_tp3
